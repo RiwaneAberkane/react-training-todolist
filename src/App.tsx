@@ -3,6 +3,9 @@ import "./App.css";
 import { Task } from "./components/Task";
 import { TaskFormModal } from "./components/TaskFormModal";
 import { data } from "./data/tasks";
+import { Header} from "./components/Header";
+import { TaskType } from "./models/Task";
+import { TaskList } from "./components/TaskList";
 
 const App = () => {
   const title = "To do list";
@@ -28,10 +31,25 @@ const App = () => {
 
   return (
     <div className="main">
-      <div className="header">
-        <h1>Replace me using the title const</h1>
-      </div>
-      <Task />
+      <Header  title={title}/>
+
+      {/* <div className="header">
+        <h1>{title}</h1>
+      </div> */} 
+
+      {/* <Task task={tasks[0]}/>
+      <Task task={tasks[1]}/>
+      <Task task={tasks[2]}/>
+      <Task task={tasks[3]}/> */}
+
+      {/* <ul>
+        {tasks.map((item : TaskType) => (
+          <Task key = {item.id} task={item}/>
+        ))}
+      </ul> */}
+
+      <TaskList data = {tasks}/>
+      
       <button
         className="add-task-btn"
         onClick={() => console.log("this button should open the modal")}
